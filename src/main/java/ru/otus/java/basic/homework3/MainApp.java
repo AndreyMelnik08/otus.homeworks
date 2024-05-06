@@ -82,9 +82,13 @@ public class MainApp {
 
     public static int sumOfSecondString(int[][] array) {
         int sum = 0;
-        for (int i = 1; i < 2; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                sum += array[i][j];
+        if (array.length < 2) {
+            sum = -1;
+        } else {
+            for (int i = 1; i < 2; i++) {
+                for (int j = 0; j < array[i].length; j++) {
+                    sum += array[i][j];
+                }
             }
         }
         return sum;
