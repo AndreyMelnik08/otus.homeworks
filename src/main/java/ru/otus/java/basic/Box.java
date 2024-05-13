@@ -11,13 +11,13 @@ public class Box {
 
     private String size;
     private String color;
-    private String condition; // параметр, который показывает открыта коробка или нет
+    private boolean isOpened; // параметр, который показывает открыта коробка или нет
     private String filling; // наполнение
 
-    public Box(String size, String color, String condition, String filling) {
+    public Box(String size, String color, boolean isOpened, String filling) {
         this.size = size;
         this.color = color;
-        this.condition = condition;
+        this.isOpened = isOpened;
         this.filling = filling;
     }
 
@@ -37,14 +37,13 @@ public class Box {
         this.color = color;
     }
 
-    public String getCondition() {
-        return condition;
+    public boolean isOpened() {
+        return isOpened;
     }
 
-    public void setCondition(String condition) {
-        this.condition = condition;
+    public void setOpened(boolean opened) {
+        isOpened = opened;
     }
-
     public String getFilling() {
         return filling;
     }
@@ -54,8 +53,34 @@ public class Box {
     }
 
     public void info() {
-        System.out.println("Информация о коробке: размер " + this.size +
-                ", цвет " + this.color + ", крышка " + this.condition +
-                ", наполнение: " + this.filling);
+        System.out.println("Информация о коробке: размер " + size +
+                ", цвет " + color + ", крышка " + isOpened +
+                ", наполнение: " + filling);
     }
+
+    public boolean open () {
+        isOpened = true;
+        System.out.println("Коробка " + size + " открыта");
+        return isOpened;
+    }
+
+    public boolean close () {
+        isOpened = false;
+        System.out.println("Коробка " + size + " закрыта");
+        return isOpened;
+    }
+
+    public void changeColor () {
+        System.out.println("Коробка " + size + " перекрашена в " + color);
+    }
+
+    public void put () {
+        System.out.println("В коробке " + size + " лежит " + filling);
+    }
+
+    public void get () {
+        filling = "пустая";
+        System.out.println("Коробка " + size + " " + filling);
+    }
+
 }
