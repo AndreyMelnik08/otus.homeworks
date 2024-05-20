@@ -25,10 +25,6 @@ public class Box {
         return size;
     }
 
-    public void setSize(String color) {
-        this.size = size;
-    }
-
     public String getColor() {
         return color;
     }
@@ -41,15 +37,8 @@ public class Box {
         return isOpened;
     }
 
-    public void setOpened(boolean opened) {
-        isOpened = opened;
-    }
     public String getFilling() {
         return filling;
-    }
-
-    public void setFilling(String filling) {
-        this.filling = filling;
     }
 
     public void info() {
@@ -74,7 +63,8 @@ public class Box {
         System.out.println("Коробка " + size + " перекрашена в " + color);
     }
 
-    public void put () {
+    public void put (String thing) {
+        filling = thing;
         System.out.println("В коробке " + size + " лежит " + filling);
     }
 

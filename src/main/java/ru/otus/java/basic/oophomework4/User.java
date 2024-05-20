@@ -12,14 +12,14 @@ public class User {
     private String surname;
     private String name;
     private String patronymic;
-    private int age;
+    private int birthDate;
     private String email;
 
-    public User(String surname, String name, String patronymic, int age, String email) {
+    public User(String surname, String name, String patronymic, int birthDate, String email) {
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
-        this.age = age;
+        this.birthDate = birthDate;
         this.email = email;
     }
 
@@ -47,12 +47,12 @@ public class User {
         this.patronymic = patronymic;
     }
 
-    public int getAge() {
-        return this.age;
+    public int getBirthDate() {
+        return this.birthDate;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthDate(int birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getEmail() {
@@ -65,7 +65,7 @@ public class User {
 
     public void info() {
         System.out.println("ФИО: " + this.surname + " " + this.name + " " + this.patronymic);
-        System.out.println("Год рождения: " + this.age);
+        System.out.println("Год рождения: " + this.birthDate);
         System.out.println("e-mail: " + this.email);
     }
 }

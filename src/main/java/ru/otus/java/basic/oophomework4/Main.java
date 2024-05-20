@@ -10,16 +10,16 @@ public class Main {
 
         User[] users = {
 
-                new User("Андреев", "Андрей", "Андреевич", 30, "andreev@mail.ru"),
-                new User("Иванов", "Иван", "Иванович", 55, "ivanov@mail.ru"),
-                new User("Сидоровa", "Анна", "Витальевна", 60, "sidorova@mail.ru"),
-                new User("Смирнов", "Олег", "Олегович", 26, "smirnov@mail.ru"),
-                new User("Попов", "Кирилл", "Кириллович", 41, "popov@mail.ru"),
-                new User("Морозова", "Анастасия", "Сергеевна", 59, "morozova@mail.ru"),
-                new User("Кузнецов", "Денис", "Олегович", 19, "kuznetcov@mail.ru"),
-                new User("Зайцев", "Никита", "Константинович", 33, "paytsev@mail.ru"),
-                new User("Степанов", "Виталий", "Федорович", 27, "stepanov@mail.ru"),
-                new User("Орлова", "Ксения", "Михайловна", 45, "orlova@mail.ru"),
+                new User("Андреев", "Андрей", "Андреевич", 1988, "andreev@mail.ru"),
+                new User("Иванов", "Иван", "Иванович", 1999, "ivanov@mail.ru"),
+                new User("Сидоровa", "Анна", "Витальевна", 2000, "sidorova@mail.ru"),
+                new User("Смирнов", "Олег", "Олегович", 1978, "smirnov@mail.ru"),
+                new User("Попов", "Кирилл", "Кириллович", 1960, "popov@mail.ru"),
+                new User("Морозова", "Анастасия", "Сергеевна", 2003, "morozova@mail.ru"),
+                new User("Кузнецов", "Денис", "Олегович", 1993, "kuznetcov@mail.ru"),
+                new User("Зайцев", "Никита", "Константинович", 1982, "paytsev@mail.ru"),
+                new User("Степанов", "Виталий", "Федорович", 1972, "stepanov@mail.ru"),
+                new User("Орлова", "Ксения", "Михайловна", 1999, "orlova@mail.ru"),
         };
 
         infoOlderFortyYears(users);
@@ -72,8 +72,7 @@ public class Main {
                 System.out.println("Что Вы хотите положить?");
                 String thing = scanner.next();
                 if (boxes[idBox - 1].getFilling().equals("пустая")) {
-                    boxes[idBox - 1].setFilling(thing);
-                    boxes[idBox - 1].put();
+                    boxes[idBox - 1].put(thing);
                 } else {
                     System.out.println("В коробке уже лежит предмет " + boxes[idBox - 1].getFilling());
                 }
@@ -87,6 +86,7 @@ public class Main {
                     System.out.println("Коробка закрыта, сначала откройте ее");
                 }
                 if (!boxes[idBox - 1].getFilling().equals("пустая")) {
+                    System.out.println("Вы достали " + boxes[idBox - 1].getFilling());
                     boxes[idBox - 1].get();
                 } else {
                     System.out.println("В коробке ничего нет");
@@ -100,7 +100,7 @@ public class Main {
 
     public static void infoOlderFortyYears(User[] users) {
         for (int i = 0; i < users.length; i++) {
-            if (users[i].getAge() > 40) {
+            if (users[i].getBirthDate() < 1984) {
                 users[i].info();
                 System.out.println();
             }
