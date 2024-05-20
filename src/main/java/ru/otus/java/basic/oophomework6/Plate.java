@@ -39,7 +39,7 @@ public class Plate {
 
     public boolean decreaseFood (int amount) {
         if (amount > food) {
-            System.out.println("в тарелке недостаточно еды");
+            System.out.println("В тарелке недостаточно еды");
             return false;
         } else {
             food -= amount;

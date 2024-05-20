@@ -4,10 +4,13 @@ public class Cat {
 
     private String name;
     private boolean appetite;
+    private boolean satiety;
 
-    public Cat(String name, boolean appetite) {
+    public Cat(String name, boolean appetite, boolean satiety) {
         this.name = name;
         this.appetite = appetite;
+        this.satiety = satiety;
+
     }
 
     public String getName() {
@@ -26,22 +29,28 @@ public class Cat {
         this.appetite = appetite;
     }
 
+    public boolean isSatiety() {
+        return satiety;
+    }
+
+    public void setSatiety(boolean satiety) {
+        this.satiety = satiety;
+    }
+
     public void info () {
-        if (appetite) {
-            System.out.println("Котик " + name + " сытый");
-        } else {
-            System.out.println("Котик " + name + " голоден");
-        }
+        System.out.println("Котик " + name + ", аппетит " + appetite + ", сытость: " + satiety);
     }
 
     public void eat (Plate plate) {
-        if (!appetite) {
+        if (appetite) {
             if (plate.decreaseFood(30)) {
                 System.out.println(name + " покушал");
-                appetite = true;
+                appetite = false;
+                satiety = true;
             }
-        } else
-            System.out.println(name + " сытый");
+        } else {
+            System.out.println(name + " Сытость: " + satiety);
+        }
     }
 
 }
