@@ -7,23 +7,8 @@ public class Horse extends Animal {
     }
 
     @Override
-    public int run (int distance) {
-        if (endurance >= distance) {
-            time = distance / runningSpeed;
-            endurance = endurance - distance;
-            System.out.println("пробежал " + distance + "м за " + time + " секунд");
-        } else {
-            distance = endurance;
-            time = distance / runningSpeed;
-            endurance = 0;
-            System.out.println(name + " устал и смог пробежать " + distance + "м за " + time + " секунд");
-            time = -1;
-        }
-        return time;
-    }
-
-    @Override
     public int swim (int distance) {
+        int time;
         if (endurance >= (distance * 4)) {
             time = distance / swimmingSpeed;
             endurance = endurance - distance * 4;
