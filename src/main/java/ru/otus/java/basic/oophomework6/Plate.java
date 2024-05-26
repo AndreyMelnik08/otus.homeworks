@@ -37,12 +37,12 @@ public class Plate {
         }
     }
 
-    public boolean decreaseFood (int amount) {
-        if (amount > food) {
+    public boolean decreaseFood (int appetite) {
+        if (appetite > food) {
             System.out.println("В тарелке недостаточно еды");
             return false;
         } else {
-            food -= amount;
+            food -= appetite;
             return true;
         }
     }

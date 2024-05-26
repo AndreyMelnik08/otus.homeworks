@@ -3,9 +3,9 @@ package ru.otus.java.basic.oophomework6;
 public class MainApp {
     public static void main(String[] args) {
 
-        Cat[] cats = { new Cat ("Мегатрон", true, false),
-                new Cat ("Корс", true, false),
-                new Cat ("Дионис", true, false) };
+        Cat[] cats = { new Cat ("Мегатрон", 30, false),
+                new Cat ("Корс", 30, false),
+                new Cat ("Дионис", 30, false) };
 
         Plate plate = new Plate(50,50);
 

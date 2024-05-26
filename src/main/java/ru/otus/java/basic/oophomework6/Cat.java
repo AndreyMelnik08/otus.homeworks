@@ -3,10 +3,10 @@ package ru.otus.java.basic.oophomework6;
 public class Cat {
 
     private String name;
-    private boolean appetite;
+    private int appetite;
     private boolean satiety;
 
-    public Cat(String name, boolean appetite, boolean satiety) {
+    public Cat(String name, int appetite, boolean satiety) {
         this.name = name;
         this.appetite = appetite;
         this.satiety = satiety;
@@ -21,11 +21,11 @@ public class Cat {
         this.name = name;
     }
 
-    public boolean isAppetite() {
+    public int getAppetite() {
         return appetite;
     }
 
-    public void setAppetite(boolean appetite) {
+    public void setAppetite(int appetite) {
         this.appetite = appetite;
     }
 
@@ -42,10 +42,9 @@ public class Cat {
     }
 
     public void eat (Plate plate) {
-        if (appetite) {
-            if (plate.decreaseFood(30)) {
+        if (!satiety) {
+            if (plate.decreaseFood(appetite)) {
                 System.out.println(name + " покушал");
-                appetite = false;
                 satiety = true;
             }
         } else {
