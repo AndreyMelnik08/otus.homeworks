@@ -6,7 +6,7 @@ import java.util.List;
 public class EmployeeList {
 
     public List getEmployeeNames(List<Employee> employee) {
-        List names = new ArrayList<>();
+        List<String> names = new ArrayList<>();
         for (Employee name : employee) {
             names.add(name.getName());
         }
@@ -14,7 +14,7 @@ public class EmployeeList {
     }
 
     public List getEmployeeMinAge(List<Employee> employee, int minAge) {
-        List minAgeEmployees = new ArrayList<>();
+        List<Employee> minAgeEmployees = new ArrayList<>();
         for (Employee minAgeEmployee : employee) {
             if (minAgeEmployee.getAge() <= minAge) {
                 minAgeEmployees.add(minAgeEmployee);
@@ -28,11 +28,7 @@ public class EmployeeList {
         for (Employee averageAgeEmployee : employee) {
             averageAge += averageAgeEmployee.getAge();
         }
-        averageAge = averageAge / employee.size();
-        if (averageAge >= checkMinAge) {
-            return true;
-        }
-        return false;
+        return averageAge / employee.size() >= checkMinAge;
     }
 
     public Employee getYoungestEmployee(List<Employee> employee) {

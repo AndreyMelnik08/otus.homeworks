@@ -13,8 +13,8 @@ public class MainApp {
         System.out.println(operationsWithArrays.selectMinMax(arrayListOne, 2, 8));
         List<Integer> arrayListTwo = Arrays.asList(1, 5, 6, 8, 1, 5, 6, 9, 4, 7, 8);
         System.out.println(operationsWithArrays.sumElements(arrayListTwo));
-        operationsWithArrays.changeElements(arrayListTwo, 10);
-        operationsWithArrays.increaseElements(arrayListTwo, 5);
+        System.out.println(operationsWithArrays.changeElements(arrayListTwo, 10));
+        System.out.println(operationsWithArrays.increaseElements(arrayListTwo, 5));
 
         ArrayList<Employee> employee = new ArrayList<>();
         EmployeeList employeeList = new EmployeeList();

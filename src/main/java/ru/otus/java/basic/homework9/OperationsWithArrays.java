@@ -19,18 +19,16 @@ public class OperationsWithArrays {
         }   return sum;
     }
 
-    public void changeElements(List<Integer> arrayListTwo, int elem) {
+    public List changeElements(List<Integer> arrayListTwo, int elem) {
         for (int i = 0; i < arrayListTwo.size(); i++) {
             arrayListTwo.set(i, elem);
-        }
-        System.out.println(arrayListTwo);
+        } return arrayListTwo;
     }
 
-    public void increaseElements(List<Integer> arrayListTwo, int elem) {
+    public List increaseElements(List<Integer> arrayListTwo, int elem) {
         for (int i = 0; i < arrayListTwo.size(); i++) {
             arrayListTwo.set(i, arrayListTwo.get(i) + elem);
-        }
-        System.out.println(arrayListTwo);
+        } return arrayListTwo;
     }
 
 }
