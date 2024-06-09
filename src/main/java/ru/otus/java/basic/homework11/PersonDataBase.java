@@ -1,11 +1,16 @@
 package ru.otus.java.basic.homework11;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PersonDataBase {
 
     private Map personMap;
+
+    List<Position> managerPositions = Arrays.asList(Position.MANAGER, Position.DIRECTOR, Position.BRANCH_DIRECTOR,
+            Position.SENIOR_MANAGER);
 
     public Map getPersonMap() {
         return personMap;
@@ -28,17 +33,12 @@ public class PersonDataBase {
     }
 
     public boolean isManager(Position person) {
-        Position position = person;
-        return position == Position.MANAGER || position == Position.DIRECTOR || position == Position.BRANCH_DIRECTOR
-                || position == Position.SENIOR_MANAGER;
+        return managerPositions.contains(person);
     }
 
     public boolean isEmployee(Long id) {
         Person person = (Person) personMap.get(id);
-        Position position = person.position;
-        return position == Position.DRIVER || position == Position.ENGINEER || position == Position.DEVELOPER ||
-                position == Position.QA || position == Position.JANITOR || position == Position.PLUMBER ||
-                position == Position.JUNIOR_DEVELOPER;
+        return !managerPositions.contains(person.position);
     }
 
     @Override
