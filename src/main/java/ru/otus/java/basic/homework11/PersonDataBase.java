@@ -1,24 +1,20 @@
 package ru.otus.java.basic.homework11;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class PersonDataBase {
 
     private Map personMap;
 
-    List<Position> managerPositions = Arrays.asList(Position.MANAGER, Position.DIRECTOR, Position.BRANCH_DIRECTOR,
-            Position.SENIOR_MANAGER);
-
-    public Map getPersonMap() {
-        return personMap;
-    }
-
-    public void setPersonMap(Map personMap) {
-        this.personMap = personMap;
-    }
+    Map<Integer, Position> managerMap = new HashMap<>() {
+        {
+            put(1, Position.BRANCH_DIRECTOR);
+            put(2, Position.DIRECTOR);
+            put(3, Position.SENIOR_MANAGER);
+            put(4, Position.MANAGER);
+        }
+    };
 
     public PersonDataBase() {
         personMap = new HashMap<>();
@@ -33,12 +29,12 @@ public class PersonDataBase {
     }
 
     public boolean isManager(Position person) {
-        return managerPositions.contains(person);
+        return managerMap.containsValue(person);
     }
 
     public boolean isEmployee(Long id) {
         Person person = (Person) personMap.get(id);
-        return !managerPositions.contains(person.position);
+        return !managerMap.containsValue(person.position);
     }
 
     @Override
