@@ -14,21 +14,26 @@ public class Recording {
     }
 
     public void read(int arrayId) {
-        try (InputStreamReader in = new InputStreamReader(new FileInputStream(array[arrayId - 1]))) {
+        try (BufferedInputStream in = new BufferedInputStream(new FileInputStream(array[arrayId - 1]))) {
             int n = in.read();
             while (n != -1) {
                 System.out.print((char) n);
                 n = in.read();
             }
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл в директории не был найден, будет создан файл: " + array[arrayId - 1]);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void recordingInFile(String data, int arrayId) {
-        try (FileOutputStream out = new FileOutputStream(array[arrayId - 1], true)) {
+        try (BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(array[arrayId - 1],
+                true))) {
             byte[] buffer = data.getBytes(StandardCharsets.UTF_8);
-            out.write(buffer);
+            for (int i = 0; i < buffer.length; i++) {
+                out.write(buffer[i]);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
