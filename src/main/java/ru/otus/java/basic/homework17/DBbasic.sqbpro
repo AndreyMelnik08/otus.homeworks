@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Компутер/DBbasic.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1016"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,7:mainAnswers"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Answers" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort><column index="1" mode="0"/></sort><column_widths><column index="1" value="75"/><column index="2" value="83"/><column index="3" value="227"/><column index="4" value="161"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Question" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="83"/><column index="2" value="54"/><column index="3" value="246"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Questions" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="83"/><column index="2" value="54"/><column index="3" value="246"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Tests" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="54"/><column index="2" value="78"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="sqlite_sequence" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="43"/><column index="2" value="40"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">--CREATE TABLE Questions (question_id SERIAL PRIMARY KEY, test_id INT REFERENCES Tests(test_id), question_text TEXT NOT NULL);
+
+--CREATE TABLE Answers (answer_id SERIAL PRIMARY KEY, question_id INT REFERENCES Questions(question_id), answer_text TEXT NOT NULL, is_correct BOOLEAN NOT NULL );
+
+--INSERT INTO Tests (test_id, test_name) VALUES (1, 'Тест 1'); 
+
+--INSERT INTO Questions (question_id, question_text) VALUES (1, 'Какой город является столицей Италии?'); 
+
+--INSERT INTO Answers (question_id, answer_text, is_correct) VALUES (1, 'Рим', TRUE); 
+
+--INSERT INTO Answers (question_id, answer_text, is_correct) VALUES (1, 'Париж', FALSE); 
+
+--INSERT INTO Answers (question_id, answer_text, is_correct) VALUES (1, 'Мадрид', FALSE);
+
+--INSERT INTO Questions (question_id, question_text) VALUES (2, 'Где находится Индия?'); 
+
+--INSERT INTO Answers (question_id, answer_text, is_correct) VALUES (2, 'Северная Америка', FALSE); 
+
+--INSERT INTO Answers (question_id, answer_text, is_correct) VALUES (2, 'Европа', FALSE); 
+
+--INSERT INTO Answers (question_id, answer_text, is_correct) VALUES (2, 'Азия', TRUE);
+
+--INSERT INTO Answers (question_id, answer_text, is_correct) VALUES (2, 'Африка', FALSE);
+
+--INSERT INTO Questions (question_id, question_text) VALUES (3, 'Как называется китайская валюта?'); 
+
+--INSERT INTO Answers (question_id, answer_text, is_correct) VALUES (3, 'Юань', TRUE); 
+
+--INSERT INTO Answers (question_id, answer_text, is_correct) VALUES (3, 'Доллар', FALSE); 
+
+--INSERT INTO Answers (question_id, answer_text, is_correct) VALUES (3, 'Тенге', FALSE);
+
+--INSERT INTO Answers (question_id, answer_text, is_correct) VALUES (3, 'Шекель', FALSE);
+
+SELECT * FROM Answers;
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
+
